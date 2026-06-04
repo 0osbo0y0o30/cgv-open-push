@@ -17,7 +17,9 @@ image_by_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-
 
 ### 📢 안내
 
-추가 건의나 문의사항은 [issues](https://github.com/0w0i0n0g0/cgv-open-push/issues)에 남겨주시면 최대한 빠르게 검토하도록 하겠습니다.
+당분간 용산 CGV 특별관에 대한 예매 오픈 알리미만 운영될 예정입니다.
+
+추가 건의나 문의사항은 [issues](https://github.com/0w0i0n0g0/cgv-open-push/issues)에 남겨주시면 남겨주시면 최대한 반영할 수 있도록 하겠습니다.
 
 <br>
 
@@ -27,15 +29,9 @@ image_by_<a href="https://kr.freepik.com/free-photo/3d-render-notification-bell-
 
 <br>
 
-### 👀 서버가 작동 중인지 여기서 확인하세요!
-
-[서버 로그 및 상태 확인 페이지](https://cgv-open-push.wzero.dev)
-
-<br>
-
 ### 🔎 현재 동작하고 있는 알리미는?
 
-> (2025년 10월 기준)
+> (2026년 6월 기준)
 
 - 용산아이파크몰 IMAX
 - 용산아이파크몰 4DX
@@ -79,7 +75,7 @@ https://snapp.wzero.dev/cgv
 
 ## 사용 전 반드시 읽어주세요.
 
--  CGV 예매 오픈 알리미는 CGV의 특정 영화관, 특정 영화의 상영 일정을 5분마다 갱신하여 변동사항을 확인하고, 변동사항이 발생된다면 Discord를 통해 알림을 전송합니다.
+-  CGV 예매 오픈 알리미는 CGV의 특정 영화관, 특정 영화의 상영 일정을 주기적으로 갱신하여 변동사항을 확인하고, 변동사항이 발생된다면 Discord를 통해 알림을 전송합니다.
 
 - 원활한 운영을 위해 Discord 서버 내에서 예매 오픈 알림을 받는 것 이외에 채널에 메시지를 게시하거나, 서버 운영에 피해가 되는 행동이 발견되면 경고 없이 차단될 수 있습니다. 모든 문의사항은 Github에 게시하여 주시기 바랍니다.
 
