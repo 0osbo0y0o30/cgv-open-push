@@ -132,7 +132,6 @@ def run_once(known_dates: set) -> set:
             f"🎬 **예매 오픈 감지!**\n"
             f"CGV 천호 IMAX (1관) - 오디세이\n"
             f"새로 열린 날짜: {dates_str}\n"
-            f"https://cgv.co.kr/cnm/movieBook/movie"
         )
         print(message)
         send_discord_message(message)
