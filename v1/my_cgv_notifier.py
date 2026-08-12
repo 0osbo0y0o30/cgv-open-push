@@ -26,7 +26,7 @@ load_dotenv()
 # ==================== CONFIG (본인 값으로 수정) ====================
 
 SITE_NO = "0199"          # CGV 천호
-SCNS_NO = "006"           # 1관 (IMAX)
+SCNS_NO = "006"           # IMAX관
 MOV_NO = "30001323"       # 오디세이
 CO_CD = "A420"            # CGV 고정 코드 (보통 안 바꿔도 됨)
 RTCTL_SCOP_CD = "08"      # 캡처했던 요청 그대로 사용
@@ -91,6 +91,30 @@ def send_discord_message(content: str):
     resp = requests.post(url, headers=headers, json={"content": content}, timeout=10)
     if resp.status_code not in (200, 201):
         print(f"[디스코드 전송 실패] status={resp.status_code} body={resp.text}")
+
+
+def send_discord_message_chunked(header: str, lines: list, footer: str):
+    """
+    디스코드 메시지 길이 제한(2000자)을 넘지 않도록,
+    header + 여러 줄(lines) + footer를 필요한 만큼 여러 메시지로 나눠 보낸다.
+    """
+    DISCORD_LIMIT = 2000
+    chunk = header
+    sent_any = False
+
+    for line in lines:
+        candidate = chunk + "\n" + line
+        if len(candidate) + len(footer) + 1 > DISCORD_LIMIT:
+            send_discord_message(chunk)
+            sent_any = True
+            chunk = line  # 새 메시지는 헤더 없이 바로 이어서 (원하면 header 다시 붙여도 됨)
+        else:
+            chunk = candidate
+
+    chunk = chunk + "\n" + footer
+    send_discord_message(chunk)
+    sent_any = True
+    return sent_any
 
 
 def fetch_shows(scn_ymd: str):
@@ -169,22 +193,24 @@ def run_once(known_shows: dict) -> dict:
     booking_link = "https://cgv.co.kr/cnm/movieBook/movie"
 
     if new_show_messages:
-        message = (
-            f"🎬 **새 상영 회차 오픈!**\n{header}\n"
-            + "\n".join(new_show_messages)
-            + f"\n{booking_link}"
+        print(f"🎬 새 상영 회차 오픈! {header}")
+        for line in new_show_messages:
+            print(line)
+        send_discord_message_chunked(
+            f"🎬 **새 상영 회차 오픈!**\n{header}",
+            new_show_messages,
+            # booking_link,
         )
-        print(message)
-        send_discord_message(message)
 
     if seat_increase_messages:
-        message = (
-            f"💺 **잔여좌석 증가 (취소표 발생 가능성)**\n{header}\n"
-            + "\n".join(seat_increase_messages)
-            + f"\n{booking_link}"
+        print(f"💺 잔여좌석 증가! {header}")
+        for line in seat_increase_messages:
+            print(line)
+        send_discord_message_chunked(
+            f"💺 **잔여좌석 증가 (취소표 발생 가능성)**\n{header}",
+            seat_increase_messages,
+            # booking_link,
         )
-        print(message)
-        send_discord_message(message)
 
     return known_shows
 
