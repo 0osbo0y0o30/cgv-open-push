@@ -35,7 +35,7 @@ RTCTL_SCOP_CD = "08"      # 캡처했던 요청 그대로 사용
 DAYS_AHEAD = 21
 
 # 알림 보낼 디스코드 채널 ID (본인 서버의 채널 ID로 교체)
-DISCORD_CHANNEL_ID = "여기에_본인_채널_ID_입력"
+DISCORD_CHANNEL_ID = "1536746886151544842"
 
 # 폴링 간격 (10분 기준, 초 단위) + 약간의 랜덤(지터) 추가
 POLL_INTERVAL_SECONDS = 10 * 60
