@@ -1,0 +1,392 @@
+{
+  "20260813_1": {
+    "scn_ymd": "20260813",
+    "scnsrtTm": "0900",
+    "scnendTm": "1202",
+    "frSeatCnt": 8
+  },
+  "20260813_2": {
+    "scn_ymd": "20260813",
+    "scnsrtTm": "1230",
+    "scnendTm": "1532",
+    "frSeatCnt": 8
+  },
+  "20260813_3": {
+    "scn_ymd": "20260813",
+    "scnsrtTm": "1600",
+    "scnendTm": "1902",
+    "frSeatCnt": 10
+  },
+  "20260813_4": {
+    "scn_ymd": "20260813",
+    "scnsrtTm": "1930",
+    "scnendTm": "2232",
+    "frSeatCnt": 5
+  },
+  "20260813_5": {
+    "scn_ymd": "20260813",
+    "scnsrtTm": "2300",
+    "scnendTm": "2602",
+    "frSeatCnt": 13
+  },
+  "20260814_1": {
+    "scn_ymd": "20260814",
+    "scnsrtTm": "0900",
+    "scnendTm": "1202",
+    "frSeatCnt": 4
+  },
+  "20260814_2": {
+    "scn_ymd": "20260814",
+    "scnsrtTm": "1230",
+    "scnendTm": "1532",
+    "frSeatCnt": 4
+  },
+  "20260814_3": {
+    "scn_ymd": "20260814",
+    "scnsrtTm": "1600",
+    "scnendTm": "1902",
+    "frSeatCnt": 4
+  },
+  "20260814_4": {
+    "scn_ymd": "20260814",
+    "scnsrtTm": "1930",
+    "scnendTm": "2232",
+    "frSeatCnt": 4
+  },
+  "20260814_5": {
+    "scn_ymd": "20260814",
+    "scnsrtTm": "2300",
+    "scnendTm": "2602",
+    "frSeatCnt": 5
+  },
+  "20260815_1": {
+    "scn_ymd": "20260815",
+    "scnsrtTm": "0830",
+    "scnendTm": "1132",
+    "frSeatCnt": 4
+  },
+  "20260815_2": {
+    "scn_ymd": "20260815",
+    "scnsrtTm": "1200",
+    "scnendTm": "1502",
+    "frSeatCnt": 4
+  },
+  "20260815_3": {
+    "scn_ymd": "20260815",
+    "scnsrtTm": "1530",
+    "scnendTm": "1832",
+    "frSeatCnt": 4
+  },
+  "20260815_4": {
+    "scn_ymd": "20260815",
+    "scnsrtTm": "1900",
+    "scnendTm": "2202",
+    "frSeatCnt": 4
+  },
+  "20260815_5": {
+    "scn_ymd": "20260815",
+    "scnsrtTm": "2230",
+    "scnendTm": "2532",
+    "frSeatCnt": 4
+  },
+  "20260816_1": {
+    "scn_ymd": "20260816",
+    "scnsrtTm": "0830",
+    "scnendTm": "1132",
+    "frSeatCnt": 4
+  },
+  "20260816_2": {
+    "scn_ymd": "20260816",
+    "scnsrtTm": "1200",
+    "scnendTm": "1502",
+    "frSeatCnt": 4
+  },
+  "20260816_3": {
+    "scn_ymd": "20260816",
+    "scnsrtTm": "1530",
+    "scnendTm": "1832",
+    "frSeatCnt": 4
+  },
+  "20260816_4": {
+    "scn_ymd": "20260816",
+    "scnsrtTm": "1900",
+    "scnendTm": "2202",
+    "frSeatCnt": 4
+  },
+  "20260816_5": {
+    "scn_ymd": "20260816",
+    "scnsrtTm": "2230",
+    "scnendTm": "2532",
+    "frSeatCnt": 4
+  },
+  "20260817_1": {
+    "scn_ymd": "20260817",
+    "scnsrtTm": "0830",
+    "scnendTm": "1132",
+    "frSeatCnt": 4
+  },
+  "20260817_2": {
+    "scn_ymd": "20260817",
+    "scnsrtTm": "1200",
+    "scnendTm": "1502",
+    "frSeatCnt": 4
+  },
+  "20260817_3": {
+    "scn_ymd": "20260817",
+    "scnsrtTm": "1530",
+    "scnendTm": "1832",
+    "frSeatCnt": 4
+  },
+  "20260817_4": {
+    "scn_ymd": "20260817",
+    "scnsrtTm": "1900",
+    "scnendTm": "2202",
+    "frSeatCnt": 4
+  },
+  "20260817_5": {
+    "scn_ymd": "20260817",
+    "scnsrtTm": "2230",
+    "scnendTm": "2532",
+    "frSeatCnt": 16
+  },
+  "20260818_1": {
+    "scn_ymd": "20260818",
+    "scnsrtTm": "0930",
+    "scnendTm": "1232",
+    "frSeatCnt": 23
+  },
+  "20260818_2": {
+    "scn_ymd": "20260818",
+    "scnsrtTm": "1255",
+    "scnendTm": "1557",
+    "frSeatCnt": 19
+  },
+  "20260818_3": {
+    "scn_ymd": "20260818",
+    "scnsrtTm": "1620",
+    "scnendTm": "1922",
+    "frSeatCnt": 21
+  },
+  "20260818_4": {
+    "scn_ymd": "20260818",
+    "scnsrtTm": "1945",
+    "scnendTm": "2247",
+    "frSeatCnt": 21
+  },
+  "20260818_5": {
+    "scn_ymd": "20260818",
+    "scnsrtTm": "2310",
+    "scnendTm": "2612",
+    "frSeatCnt": 45
+  },
+  "20260819_1": {
+    "scn_ymd": "20260819",
+    "scnsrtTm": "0930",
+    "scnendTm": "1232",
+    "frSeatCnt": 31
+  },
+  "20260819_2": {
+    "scn_ymd": "20260819",
+    "scnsrtTm": "1255",
+    "scnendTm": "1557",
+    "frSeatCnt": 33
+  },
+  "20260819_3": {
+    "scn_ymd": "20260819",
+    "scnsrtTm": "1620",
+    "scnendTm": "1922",
+    "frSeatCnt": 32
+  },
+  "20260819_4": {
+    "scn_ymd": "20260819",
+    "scnsrtTm": "1945",
+    "scnendTm": "2247",
+    "frSeatCnt": 25
+  },
+  "20260819_5": {
+    "scn_ymd": "20260819",
+    "scnsrtTm": "2310",
+    "scnendTm": "2612",
+    "frSeatCnt": 54
+  },
+  "20260820_1": {
+    "scn_ymd": "20260820",
+    "scnsrtTm": "0930",
+    "scnendTm": "1232",
+    "frSeatCnt": 40
+  },
+  "20260820_2": {
+    "scn_ymd": "20260820",
+    "scnsrtTm": "1255",
+    "scnendTm": "1557",
+    "frSeatCnt": 38
+  },
+  "20260820_3": {
+    "scn_ymd": "20260820",
+    "scnsrtTm": "1620",
+    "scnendTm": "1922",
+    "frSeatCnt": 38
+  },
+  "20260820_4": {
+    "scn_ymd": "20260820",
+    "scnsrtTm": "1945",
+    "scnendTm": "2247",
+    "frSeatCnt": 29
+  },
+  "20260820_5": {
+    "scn_ymd": "20260820",
+    "scnsrtTm": "2310",
+    "scnendTm": "2612",
+    "frSeatCnt": 58
+  },
+  "20260821_1": {
+    "scn_ymd": "20260821",
+    "scnsrtTm": "0930",
+    "scnendTm": "1232",
+    "frSeatCnt": 35
+  },
+  "20260821_2": {
+    "scn_ymd": "20260821",
+    "scnsrtTm": "1255",
+    "scnendTm": "1557",
+    "frSeatCnt": 34
+  },
+  "20260821_3": {
+    "scn_ymd": "20260821",
+    "scnsrtTm": "1620",
+    "scnendTm": "1922",
+    "frSeatCnt": 26
+  },
+  "20260821_4": {
+    "scn_ymd": "20260821",
+    "scnsrtTm": "1945",
+    "scnendTm": "2247",
+    "frSeatCnt": 12
+  },
+  "20260821_5": {
+    "scn_ymd": "20260821",
+    "scnsrtTm": "2310",
+    "scnendTm": "2612",
+    "frSeatCnt": 27
+  },
+  "20260822_1": {
+    "scn_ymd": "20260822",
+    "scnsrtTm": "0900",
+    "scnendTm": "1202",
+    "frSeatCnt": 9
+  },
+  "20260822_2": {
+    "scn_ymd": "20260822",
+    "scnsrtTm": "1230",
+    "scnendTm": "1532",
+    "frSeatCnt": 10
+  },
+  "20260822_3": {
+    "scn_ymd": "20260822",
+    "scnsrtTm": "1600",
+    "scnendTm": "1902",
+    "frSeatCnt": 6
+  },
+  "20260822_4": {
+    "scn_ymd": "20260822",
+    "scnsrtTm": "1930",
+    "scnendTm": "2232",
+    "frSeatCnt": 9
+  },
+  "20260822_5": {
+    "scn_ymd": "20260822",
+    "scnsrtTm": "2300",
+    "scnendTm": "2602",
+    "frSeatCnt": 19
+  },
+  "20260823_1": {
+    "scn_ymd": "20260823",
+    "scnsrtTm": "0900",
+    "scnendTm": "1202",
+    "frSeatCnt": 13
+  },
+  "20260823_2": {
+    "scn_ymd": "20260823",
+    "scnsrtTm": "1230",
+    "scnendTm": "1532",
+    "frSeatCnt": 8
+  },
+  "20260823_3": {
+    "scn_ymd": "20260823",
+    "scnsrtTm": "1600",
+    "scnendTm": "1902",
+    "frSeatCnt": 5
+  },
+  "20260823_4": {
+    "scn_ymd": "20260823",
+    "scnsrtTm": "1930",
+    "scnendTm": "2232",
+    "frSeatCnt": 12
+  },
+  "20260823_5": {
+    "scn_ymd": "20260823",
+    "scnsrtTm": "2300",
+    "scnendTm": "2602",
+    "frSeatCnt": 63
+  },
+  "20260824_1": {
+    "scn_ymd": "20260824",
+    "scnsrtTm": "0930",
+    "scnendTm": "1232",
+    "frSeatCnt": 45
+  },
+  "20260824_2": {
+    "scn_ymd": "20260824",
+    "scnsrtTm": "1255",
+    "scnendTm": "1557",
+    "frSeatCnt": 33
+  },
+  "20260824_3": {
+    "scn_ymd": "20260824",
+    "scnsrtTm": "1620",
+    "scnendTm": "1922",
+    "frSeatCnt": 39
+  },
+  "20260824_4": {
+    "scn_ymd": "20260824",
+    "scnsrtTm": "1945",
+    "scnendTm": "2247",
+    "frSeatCnt": 37
+  },
+  "20260824_5": {
+    "scn_ymd": "20260824",
+    "scnsrtTm": "2310",
+    "scnendTm": "2612",
+    "frSeatCnt": 75
+  },
+  "20260825_1": {
+    "scn_ymd": "20260825",
+    "scnsrtTm": "0930",
+    "scnendTm": "1232",
+    "frSeatCnt": 44
+  },
+  "20260825_2": {
+    "scn_ymd": "20260825",
+    "scnsrtTm": "1255",
+    "scnendTm": "1557",
+    "frSeatCnt": 43
+  },
+  "20260825_3": {
+    "scn_ymd": "20260825",
+    "scnsrtTm": "1620",
+    "scnendTm": "1922",
+    "frSeatCnt": 46
+  },
+  "20260825_4": {
+    "scn_ymd": "20260825",
+    "scnsrtTm": "1945",
+    "scnendTm": "2247",
+    "frSeatCnt": 27
+  },
+  "20260825_5": {
+    "scn_ymd": "20260825",
+    "scnsrtTm": "2310",
+    "scnendTm": "2612",
+    "frSeatCnt": 71
+  }
+}
