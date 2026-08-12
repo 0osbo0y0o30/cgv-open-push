@@ -93,7 +93,7 @@ def send_discord_message(content: str):
         print(f"[디스코드 전송 실패] status={resp.status_code} body={resp.text}")
 
 
-def send_discord_message_chunked(header: str, lines: list, footer: str):
+def send_discord_message_chunked(header: str, lines: list, footer: str = ""):
     """
     디스코드 메시지 길이 제한(2000자)을 넘지 않도록,
     header + 여러 줄(lines) + footer를 필요한 만큼 여러 메시지로 나눠 보낸다.
