@@ -35,7 +35,7 @@ RTCTL_SCOP_CD = "08"      # 캡처했던 요청 그대로 사용
 DAYS_AHEAD = 21
 
 # 알림 보낼 디스코드 채널 ID (본인 서버의 채널 ID로 교체)
-DISCORD_CHANNEL_ID = "1536746886151544842"
+DISCORD_CHANNEL_ID = "여기에_본인_채널_ID_입력"
 
 # 폴링 간격 (10분 기준, 초 단위) + 약간의 랜덤(지터) 추가
 POLL_INTERVAL_SECONDS = 10 * 60
@@ -60,16 +60,26 @@ API_URL = "https://cgv.co.kr/api/v1/booking/searchSchByMov"
 
 
 def load_state():
-    """이전에 감지했던 '이미 열려있던 날짜' 목록을 불러온다."""
+    """
+    이전에 확인했던 '회차별 상태'를 불러온다.
+    형식: { "회차키": {"scn_ymd": ..., "scnsrtTm": ..., "scnendTm": ..., "frSeatCnt": int}, ... }
+    """
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, "r", encoding="utf-8") as f:
-            return set(json.load(f))
-    return set()
+            return json.load(f)
+    return {}
 
 
-def save_state(known_dates):
+def save_state(known_shows: dict):
     with open(STATE_FILE, "w", encoding="utf-8") as f:
-        json.dump(sorted(list(known_dates)), f, ensure_ascii=False, indent=2)
+        json.dump(known_shows, f, ensure_ascii=False, indent=2)
+
+
+def format_time(hhmm: str) -> str:
+    """'0930' -> '09:30' 형태로 변환."""
+    if not hhmm or len(hhmm) != 4:
+        return hhmm or "?"
+    return f"{hhmm[:2]}:{hhmm[2:]}"
 
 
 def send_discord_message(content: str):
@@ -83,8 +93,8 @@ def send_discord_message(content: str):
         print(f"[디스코드 전송 실패] status={resp.status_code} body={resp.text}")
 
 
-def check_date(scn_ymd: str) -> bool:
-    """해당 날짜에 지정한 상영관(scnsNo)에 상영 일정이 있으면 True."""
+def fetch_shows(scn_ymd: str):
+    """해당 날짜에 지정한 상영관(scnsNo)의 회차 목록을 반환한다. (없으면 빈 리스트)"""
     params = {
         "coCd": CO_CD,
         "siteNo": SITE_NO,
@@ -96,57 +106,97 @@ def check_date(scn_ymd: str) -> bool:
         resp = requests.get(API_URL, headers=HEADERS, params=params, timeout=10)
     except requests.RequestException as e:
         print(f"[요청 실패] {scn_ymd}: {e}")
-        return False
+        return []
 
     if resp.status_code == 429:
         print("[경고] 429 Too Many Requests - 잠시 쉬었다가 재시도합니다.")
         time.sleep(60)
-        return False
+        return []
 
     if resp.status_code != 200:
         print(f"[비정상 응답] {scn_ymd}: status={resp.status_code}")
-        return False
+        return []
 
     data = resp.json().get("data") or []
-    return any(item.get("scnsNo") == SCNS_NO for item in data)
+    return [item for item in data if item.get("scnsNo") == SCNS_NO]
 
 
-def run_once(known_dates: set) -> set:
+def run_once(known_shows: dict) -> dict:
     today = datetime.date.today()
-    newly_found = []
+    new_show_messages = []
+    seat_increase_messages = []
 
     for i in range(DAYS_AHEAD):
         scn_ymd = (today + datetime.timedelta(days=i)).strftime("%Y%m%d")
-        has_schedule = check_date(scn_ymd)
+        shows = fetch_shows(scn_ymd)
 
-        if has_schedule and scn_ymd not in known_dates:
-            newly_found.append(scn_ymd)
-            known_dates.add(scn_ymd)
+        for item in shows:
+            # 회차를 유일하게 구분하는 키 (날짜 + 회차번호)
+            key = f"{scn_ymd}_{item.get('scnSseq')}"
+            start_tm = item.get("scnsrtTm", "")
+            end_tm = item.get("scnendTm", "")
+            try:
+                seat_cnt = int(item.get("frSeatCnt") or 0)
+            except ValueError:
+                seat_cnt = 0
+
+            date_str = f"{scn_ymd[:4]}-{scn_ymd[4:6]}-{scn_ymd[6:]}"
+            time_str = f"{format_time(start_tm)}~{format_time(end_tm)}"
+
+            if key not in known_shows:
+                # 처음 보는 회차 = 새로 예매가 열린 상영
+                new_show_messages.append(
+                    f"• {date_str} {time_str} | 잔여좌석 {seat_cnt}석"
+                )
+            else:
+                prev_seat_cnt = known_shows[key].get("frSeatCnt", 0)
+                if seat_cnt > prev_seat_cnt:
+                    seat_increase_messages.append(
+                        f"• {date_str} {time_str} | 잔여좌석 {prev_seat_cnt}석 → {seat_cnt}석"
+                    )
+
+            known_shows[key] = {
+                "scn_ymd": scn_ymd,
+                "scnsrtTm": start_tm,
+                "scnendTm": end_tm,
+                "frSeatCnt": seat_cnt,
+            }
 
         # CGV 서버에 너무 몰아치지 않도록 요청 사이 살짝 텀
         time.sleep(1)
 
-    if newly_found:
-        dates_str = ", ".join(newly_found)
+    header = "CGV 천호 IMAX (1관) - 오디세이"
+    booking_link = "https://cgv.co.kr/cnm/movieBook/movie"
+
+    if new_show_messages:
         message = (
-            f"🎬 **예매 오픈 감지!**\n"
-            f"CGV 천호 IMAX (1관) - 오디세이\n"
-            f"새로 열린 날짜: {dates_str}\n"
+            f"🎬 **새 상영 회차 오픈!**\n{header}\n"
+            + "\n".join(new_show_messages)
+            + f"\n{booking_link}"
         )
         print(message)
         send_discord_message(message)
 
-    return known_dates
+    if seat_increase_messages:
+        message = (
+            f"💺 **잔여좌석 증가 (취소표 발생 가능성)**\n{header}\n"
+            + "\n".join(seat_increase_messages)
+            + f"\n{booking_link}"
+        )
+        print(message)
+        send_discord_message(message)
+
+    return known_shows
 
 
 def main():
     print("CGV 개인 알리미 시작 (10분 간격, 종료하려면 Ctrl+C)")
-    known_dates = load_state()
+    known_shows = load_state()
 
     while True:
         try:
-            known_dates = run_once(known_dates)
-            save_state(known_dates)
+            known_shows = run_once(known_shows)
+            save_state(known_shows)
         except Exception as e:
             print(f"[예외 발생] {e}")
 
