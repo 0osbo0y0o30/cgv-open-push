@@ -93,13 +93,13 @@
     "scn_ymd": "20260816",
     "scnsrtTm": "0830",
     "scnendTm": "1132",
-    "frSeatCnt": 4
+    "frSeatCnt": 3
   },
   "20260816_2": {
     "scn_ymd": "20260816",
     "scnsrtTm": "1200",
     "scnendTm": "1502",
-    "frSeatCnt": 4
+    "frSeatCnt": 5
   },
   "20260816_3": {
     "scn_ymd": "20260816",
@@ -111,7 +111,7 @@
     "scn_ymd": "20260816",
     "scnsrtTm": "1900",
     "scnendTm": "2202",
-    "frSeatCnt": 5
+    "frSeatCnt": 4
   },
   "20260816_5": {
     "scn_ymd": "20260816",
@@ -147,7 +147,7 @@
     "scn_ymd": "20260817",
     "scnsrtTm": "2230",
     "scnendTm": "2532",
-    "frSeatCnt": 5
+    "frSeatCnt": 4
   },
   "20260818_1": {
     "scn_ymd": "20260818",
@@ -159,7 +159,7 @@
     "scn_ymd": "20260818",
     "scnsrtTm": "1255",
     "scnendTm": "1557",
-    "frSeatCnt": 5
+    "frSeatCnt": 7
   },
   "20260818_3": {
     "scn_ymd": "20260818",
@@ -177,7 +177,7 @@
     "scn_ymd": "20260818",
     "scnsrtTm": "2310",
     "scnendTm": "2612",
-    "frSeatCnt": 29
+    "frSeatCnt": 30
   },
   "20260819_1": {
     "scn_ymd": "20260819",
@@ -189,7 +189,7 @@
     "scn_ymd": "20260819",
     "scnsrtTm": "1255",
     "scnendTm": "1557",
-    "frSeatCnt": 12
+    "frSeatCnt": 13
   },
   "20260819_3": {
     "scn_ymd": "20260819",
@@ -201,7 +201,7 @@
     "scn_ymd": "20260819",
     "scnsrtTm": "1945",
     "scnendTm": "2247",
-    "frSeatCnt": 6
+    "frSeatCnt": 7
   },
   "20260819_5": {
     "scn_ymd": "20260819",
@@ -267,7 +267,7 @@
     "scn_ymd": "20260821",
     "scnsrtTm": "2310",
     "scnendTm": "2612",
-    "frSeatCnt": 13
+    "frSeatCnt": 11
   },
   "20260822_1": {
     "scn_ymd": "20260822",
@@ -315,7 +315,7 @@
     "scn_ymd": "20260823",
     "scnsrtTm": "1600",
     "scnendTm": "1902",
-    "frSeatCnt": 6
+    "frSeatCnt": 4
   },
   "20260823_4": {
     "scn_ymd": "20260823",
@@ -327,7 +327,7 @@
     "scn_ymd": "20260823",
     "scnsrtTm": "2300",
     "scnendTm": "2602",
-    "frSeatCnt": 37
+    "frSeatCnt": 35
   },
   "20260824_1": {
     "scn_ymd": "20260824",
@@ -345,19 +345,19 @@
     "scn_ymd": "20260824",
     "scnsrtTm": "1620",
     "scnendTm": "1922",
-    "frSeatCnt": 33
+    "frSeatCnt": 32
   },
   "20260824_4": {
     "scn_ymd": "20260824",
     "scnsrtTm": "1945",
     "scnendTm": "2247",
-    "frSeatCnt": 28
+    "frSeatCnt": 27
   },
   "20260824_5": {
     "scn_ymd": "20260824",
     "scnsrtTm": "2310",
     "scnendTm": "2612",
-    "frSeatCnt": 53
+    "frSeatCnt": 52
   },
   "20260825_1": {
     "scn_ymd": "20260825",
@@ -375,13 +375,13 @@
     "scn_ymd": "20260825",
     "scnsrtTm": "1620",
     "scnendTm": "1922",
-    "frSeatCnt": 29
+    "frSeatCnt": 28
   },
   "20260825_4": {
     "scn_ymd": "20260825",
     "scnsrtTm": "1945",
     "scnendTm": "2247",
-    "frSeatCnt": 22
+    "frSeatCnt": 20
   },
   "20260825_5": {
     "scn_ymd": "20260825",
