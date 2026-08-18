@@ -189,13 +189,13 @@
     "scn_ymd": "20260819",
     "scnsrtTm": "1255",
     "scnendTm": "1557",
-    "frSeatCnt": 8
+    "frSeatCnt": 6
   },
   "20260819_3": {
     "scn_ymd": "20260819",
     "scnsrtTm": "1620",
     "scnendTm": "1922",
-    "frSeatCnt": 5
+    "frSeatCnt": 4
   },
   "20260819_4": {
     "scn_ymd": "20260819",
@@ -375,7 +375,7 @@
     "scn_ymd": "20260825",
     "scnsrtTm": "1620",
     "scnendTm": "1922",
-    "frSeatCnt": 21
+    "frSeatCnt": 19
   },
   "20260825_4": {
     "scn_ymd": "20260825",
